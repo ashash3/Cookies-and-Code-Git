@@ -13,6 +13,12 @@ public class SearchAlgos {
 
 	// Recursive implementation
 	public void dfs_recursive(Node n) {
+		System.out.println(n);
+		n.visited = true;
+		if (n.getChildren().length() == 0) return;
+		for (Node c : n.getChildren()) {
+			if (!c.visited) dfs(c);
+		}
 	}
 
 	// Stack implementation
